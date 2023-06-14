@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>polling unit result</title>
+</head>
+<body>
+    <div style="display: grid; place-items: center;">
+        <h3>POLLING UNIT RESULT</h3>
+        {% for instance in polling_unit_result %}
+        <p>Party: {{ instance.party_abbreviation }}</p>
+        <p>Score: {{ instance.party_score }}</p>
+        <p>Entered by: {{ instance.entered_by_user }}</p>
+        <p>Result ID: {{ instance.result_id }}</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

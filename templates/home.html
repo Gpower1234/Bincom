@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <div style="display: grid; place-items: center;">
+        <h3>ELECTION RESULT</h3>
+        <a href="{% url 'polling-unit-result' %}" style="text-decoration: none; color: green;">Polling Unit Result</a>
+        <a href="{% url 'ward-result' %}" style="text-decoration: none; color: brown;">Ward Result</a>
+    </div>
+    <div style="display: grid; place-items: center;">
+        <h3>ADD RESULT</h3>
+        <a href="{% url 'add-polling_unit-result' %}" style="text-decoration: none; color: green;">Add Polling Unit Result</a>
+    </div>
+</body>
+</html>
