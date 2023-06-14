@@ -23,4 +23,5 @@ urlpatterns = [
     path('polling-unit-result', PollingUnitResult, name='polling-unit-result'),
     path('ward-result', wardResult, name='ward-result'),
     path('add-polling_unit-result', AddPollinUnitResult, name='add-polling_unit-result'),
+    path('success', Success, name='success')
 ]

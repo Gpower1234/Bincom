@@ -12,17 +12,65 @@
     </div>
     <div style="display: grid; place-items: center;">
         <form method="post">
-            <input type="number" placeholder="Ward ID" id="ward_id" name="ward_id"><br><br>
-            <input type="text" placeholder="Ward name" id="ward_name" name="ward_name"><br><br>
-            <input type="number" placeholder="Total votes" id="total_id" name="total_votes"><br><br>
-            <input type="number" placeholder="LGA ID" id="lga_id" name="LGA"><br><br>
-            <textarea placeholder="Ward description" id="description_id" name="description"></textarea><br><br>
-            <input type="text" placeholder="Entered By" id="entered_by" name="entered_by"><br><br>
-            <input type="datetime" placeholder="Date entered" id="date_entered" name="date_entered"><br><br>
-            <input type="text" placeholder="User IP Address" id="ip_id" name="user_ip_address"><br><br>
+            {% csrf_token %}
+            <input type="number" name="result_id" required="" placeholder="Result ID" id="id_result_id"><br><br>
+            <input type="number" name="polling_unit_uniqueid" required="" placeholder="Polling Unit Unique ID" id="id_polling_unit_uniqueid"><br><br>
+            <input type="text" name="party_abbreviation" maxlength="4" required="" placeholder="Party abbreviation" id="id_party_abbreviation"><br><br>
+            <input type="text" name="entered_by_user" maxlength="50" required="" placeholder="Entered by" id="id_entered_by_user"><br><br>
+            <input type="text" name="date_entered" required="" placeholder="Entered 2023-06-13" id="id_date_entered"><br><br>
+            <input type="text" name="user_ip_address" maxlength="50" required="" placeholder="User IP address" id="id_user_ip_address"><br><br>
             <button type="submit">ADD</button>
         </form>
     </div>
 </body>
 </body>
 </html>
+{% comment %}
+<div>
+    <form method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="VWCojLLeVPlMkF7c2D3sUq0mh4LW2vaC99tw85Jam8nZfQjebGkQJ7f28pCqI4Rx">
+        <p>
+<label for="id_result_id">Result id:</label>
+<input type="number" name="result_id" required="" id="id_result_id">
+
+
+</p>
+
+
+<p>
+<label for="id_polling_unit_uniqueid">Polling unit uniqueid:</label>
+<input type="number" name="polling_unit_uniqueid" required="" id="id_polling_unit_uniqueid">
+
+
+</p>
+
+
+<p>
+<label for="id_party_abbreviation">Party abbreviation:</label>
+<input type="text" name="party_abbreviation" maxlength="4" required="" id="id_party_abbreviation">
+
+
+</p>
+
+
+<p>
+<label for="id_entered_by_user">Entered by user:</label>
+<input type="text" name="entered_by_user" maxlength="50" required="" id="id_entered_by_user">
+
+
+</p>
+
+<p>
+<label for="id_date_entered">Date entered:</label>
+<input type="text" name="date_entered" required="" id="id_date_entered">
+</p>
+
+<p>
+<label for="id_user_ip_address">User ip address:</label>
+<input type="text" name="user_ip_address" maxlength="50" required="" id="id_user_ip_address">
+
+</p>
+        <button type="submit">Create</button>
+    </form>
+</div>
+{% endcomment %}

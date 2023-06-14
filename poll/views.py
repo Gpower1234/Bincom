@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
+from .forms import WardResultForm
+
 # Create your views here.
 
 def Home(request):
@@ -15,14 +17,18 @@ def wardResult(request):
 
 def AddPollinUnitResult(request):
     if request.method == 'POST':
-        addPollinUnitResult = pollingUnitResult.objects.get_or_create(
-            ward_id = ward_id,
-            ward_name = ward_name,
-            total_votes = total_votes,
-            lga_id = LGA,
-            ward_description = description,
-            entered_by_user = entered_by,
-            date_entered = date_entered,
-            user_ip_address = user_ip_address
-    )
-    return render(request, 'addPollingUnitResult.html')
+        form = WardResultForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+        else:
+            return redirect('failed')
+    else: 
+        form = WardResultForm()
+
+    context = {'form': form}
+
+    return render(request, 'addPollingUnitResult.html', context)
+
+def Success(request):
+    return render(request, 'success.html')

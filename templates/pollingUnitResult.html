@@ -10,10 +10,12 @@
     <div style="display: grid; place-items: center;">
         <h3>POLLING UNIT RESULT</h3>
         {% for instance in polling_unit_result %}
-        <p>Party: {{ instance.party_abbreviation }}</p>
-        <p>Score: {{ instance.party_score }}</p>
-        <p>Entered by: {{ instance.entered_by_user }}</p>
-        <p>Result ID: {{ instance.result_id }}</p>
+        <div>
+            <p>Party: {{ instance.party_abbreviation }}</p>
+            <p>Score: {{ instance.party_score }}</p>
+            <p>Entered by: {{ instance.entered_by_user }}</p>
+            <p>Result ID: {{ instance.result_id }}</p>
+        </div><br>
         {% endfor %}
     </div>
 </body>
